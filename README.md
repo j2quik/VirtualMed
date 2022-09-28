@@ -1,0 +1,2 @@
+# VirtualMed
+VirtualMed provides: accessible support through instant answers​, streamlines patient and healthcare interactions​, reduces tedious tasks for healthcare professionals enabling more attention towards complicated duties, trust allowing patients to share their issues without fear of being judged and automates aspects of clinical decision-making by developing protocols based on data analysis​
