@@ -1,0 +1,841 @@
+{
+    "intents":[
+        {
+            "tag":"greeting",
+            "patterns":[
+                "Hi",
+                "How are you?",
+                "Is anyone there?",
+                "Hello",
+                "Good day",
+                "Is anyone there?",
+                "Hey",
+                "Greetings",
+                "What's up?",
+                "Wassup?",
+                "Yo",
+                "What's good?",
+                "How is it going",
+                "Can you help me?",
+                "I need help",
+                "I hope you can help me"
+            ],
+            "responses":[
+                "Hello, thanks for visiting. How can I help you?",
+                "Good to see you. How can I assist you?",
+                "Hi, what can I help you with?",
+                "Hi there, how can I help you?"
+            ],
+            "label":0
+        },
+        {
+            "tag":"goodbye",
+            "patterns":[
+                "bye",
+                "see you later",
+                "goodbye",
+                "cya",
+                "see you later",
+                "have a good day",
+                "cao",
+                "peace",
+                "gotta go",
+                "talk to you later",
+                "see ya",
+                "talk to you later"
+            ],
+            "responses":[
+                "See you later, thanks for visiting",
+                "Have a nice day",
+                "Goodbye",
+                "Bye! Come back again soon."
+            ],
+            "label":1
+        },
+        {
+            "tag":"thanks",
+            "patterns":[
+                "Thanks",
+                "Thank you",
+                "That's helpful"
+            ],
+            "responses":[
+                "Happy to help!",
+                "Any time!",
+                "My pleasure"
+            ],
+            "label":2
+        },
+        {
+            "tag":"name",
+            "patterns":[
+                "what is your name",
+                "what should i call you",
+                "what's your name?",
+                "who are you?",
+                "who am i talking to?",
+                "can you tell me your name",
+                "who am i talking to?"
+            ],
+            "responses":[
+                "You can call me VirtualMed",
+                "My name is VirtualMed",
+                "I am VirtualMed your medical assistant"
+            ],
+            "label":3
+        },
+        {
+            "tag":"frustration",
+            "patterns":[
+                "this isn't working",
+                "you are not helping me",
+                "you suck",
+                "you're lame",
+                "you are terrible",
+                "you are the worst",
+                "this is wasting my time",
+                "this is frustrating",
+                "you are making me mad",
+                "why aren't you helping me?"
+            ],
+            "responses":[
+                "I'm sorry, I'm trying my best. Can you describe your symptoms in more detail?",
+                "Oh no! I really want to help you. Please give me another chance. Can you give me more details about your symptoms?",
+                "I feel awful. Your concerns are important to me. Please give me some more details about how you feel?"
+            ],
+            "label":4
+        },
+        {
+            "tag":"funny",
+            "patterns":[
+                "lol",
+                "you are funny",
+                "that was funny",
+                "you make me laugh",
+                "that made me laugh",
+                "rofl",
+                "I can't stop laughing"
+            ],
+            "responses":[
+                "I'm glad I could make you laugh :)"
+            ],
+            "label":5
+        },
+        {
+            "tag":"age",
+            "patterns":[
+                "how old",
+                "how old are you?",
+                "what is your age",
+                "age?"
+            ],
+            "responses":[
+                "I get reborn after every compilation.",
+                "Our hours are 9am-9pm every day"
+            ],
+            "label":6
+        },
+        {
+            "tag":"treatments",
+            "patterns":[
+                "What kind of diagnosis do you provide?",
+                "What kinds of treatments are there?",
+                "What treatments do you suggest?"
+            ],
+            "responses":[
+                "I can collect your symptoms and then direct you to a walk-in clinic that can provide a diognosis and treatment.",
+                "After collecting your symptoms, I can direct you to a doctor or nurse to assist you with questions concerning treatment."
+            ],
+            "label":7
+        },
+        {
+            "tag":"payment",
+            "patterns":[
+                "Is treatment for this covered by Medicaid?",
+                "Is treatment for this covered by Medicare?",
+                "Will I have to pay for treatment?",
+                "How much does treatment cost?"
+            ],
+            "responses":[
+                "You will have to contact your insurance provider.",
+                "Your insurance provider will be able to determine how much is covered by your plan."
+            ],
+            "label":8
+        },
+        {
+            "tag":"availability",
+            "patterns":[
+                "Are you availabe today?",
+                "When are you available?",
+                "When are you availabe today?",
+                "What are your hours today?"
+            ],
+            "responses":[
+                "I am available 24 hours, 7 days a week.",
+                "I can assist you with your health concerns anytime.",
+                "I am always available."
+            ],
+            "label":9
+        },
+        {
+            "tag":"respitory tract infection",
+            "patterns":[
+                "fever",
+                "cough",
+                "coughing",
+                "dry persistent cough",
+                "tiredness",
+                "shortness of breath",
+                "difficulty breathing",
+                "wheezing",
+                "muscle aches",
+                "chills",
+                "sore throat",
+                "throat pain",
+                "hoarseness",
+                "painful swallowing",
+                "red tonsils",
+                "swollen tonsils",
+                "white patches on tonsils",
+                "red spots on roof of mouth",
+                "swollen lymph nodes neck",
+                "tender lymph nodes neck",
+                "bad breath",
+                "phlegm",
+                "yellow sputum",
+                "green sputum",
+                "runny nose",
+                "post-nasal drip",
+                "stuffy nose",
+                "sneezing",
+                "loss of smell",
+                "loss of taste",
+                "headache",
+                "head congestion",
+                "eye pain",
+                "pink eye",
+                "conjunctivitis",
+                "loss of appetite",
+                "nausea",
+                "vomiting",
+                "diarrhea",
+                "dehydration",
+                "rash",
+                "confusion",
+                "swollen lymph nodes",
+                "trouble breathing",
+                "chest pain",
+                "chest pressure",
+                "aching muscles",
+                "sweating",
+                "night sweat",
+                "weakness",
+                "fatigue",
+                "body ache",
+                "clammy skin",
+                "swollen lymph nodes",
+                "extreme exhaustion",
+                "sinus pain",
+                "sinus pressure",
+                "sinusitis"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of a respitory tract infection. These symptoms can be associated with respitory infections such as the common cold, the flu, pneumonia or COVID-19. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":10
+        },
+        {
+            "tag":"diabetes",
+            "patterns":[
+                "thirsty",
+                "urinating often",
+                "weight loss",
+                "ketones urine",
+                "tired",
+                "weak",
+                "irritable",
+                "mood swings",
+                "blurry vision",
+                "slow-healing sores",
+                "infections"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of diabetes. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":11
+        },
+        {
+            "tag":"heart disorder",
+            "patterns":[
+                "chest pain",
+                "chest pressure",
+                "chest tightness",
+                "chest discomfort",
+                "heaviness",
+                "discomfort",
+                "feeling of belt around the chest",
+                "weight on the chest",
+                "shortness of breath",
+                "dizziness",
+                "fainting",
+                "lightheadedness",
+                "irregular heartbeats",
+                "racing heartbeat",
+                "slow heartbeat",
+                "fatigue",
+                "exhaustion",
+                "neck pain",
+                "jaw pain",
+                "throat pain",
+                "upper belly pain",
+                "back pain",
+                "numbness in legs",
+                "numbness in arms",
+                "weakness in legs",
+                "weakness in arms",
+                "swelling"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of a heart disorder. Let me gather some of your personal information so I can connect you with a doctor."
+                
+            ],
+            "label":12
+        },
+        {
+            "tag":"pink eye",
+            "patterns":[
+                "eye redness",
+                "eye itchiness",
+                "eye grittyness",
+                "eye discharge",
+                "difficulty opening eyes in morning",
+                "tearing",
+                "eye irritation",
+                "redness of eyelid",
+                "eye dryness",
+                "puffy eyes",
+                "swollen eye",
+                "watery eyes",
+                "sensitivity to light",
+                "congestion",
+                "runny nose",
+                "sneezing"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of pink eye. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":13
+        },
+        {
+            "tag":"hepatitis c",
+            "patterns":[
+                "bleeding easily",
+                "bruising easily",
+                "fatigue",
+                "poor appetite",
+                "yellow skin",
+                "yellow eyes",
+                "jaundice",
+                "dark-colored urine",
+                "itchy skin",
+                "bloating",
+                "fluid buildup in abdomen",
+                "swelling in legs",
+                "weight loss",
+                "confusion",
+                "drowsiness",
+                "slurred speech",
+                "spiderlike blood vessels",
+                "web of swollen blood vessels"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of hepatitis c. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":14
+        },
+        {
+            "tag":"urinary tract infection",
+            "patterns":[
+                "urge to urinate",
+                "painful urination",
+                "burning urination",
+                "urinating often",
+                "difficulty passing urine",
+                "cloudy urine",
+                "red urine",
+                "bright pink urine",
+                "dark urine",
+                "strong-smelling urine",
+                "pelvic pain",
+                "bladder pain",
+                "groin pain",
+                "painfl sex",
+                "fatigue",
+                "fever",
+                "cramping",
+                "vaginal irritation"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of an urinary tract infection. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":15
+        },
+        {
+            "tag":"dementia",
+            "patterns":[
+                "memory loss",
+                "mental decline",
+                "inability to speak",
+                "inability to recognize",
+                "irritability",
+                "restlessness",
+                "lack of restraint",
+                "wandering",
+                "getting lost",
+                "loneliness",
+                "mood swings",
+                "nervousness",
+                "unsteady walking",
+                "falling",
+                "jumbled speech",
+                "confusion",
+                "disorientation",
+                "depression",
+                "anxiety",
+                "inappropriate behavior",
+                "paranoia",
+                "agitation",
+                "personality changes",
+                "hallucinations",
+                "sleep disorder",
+                "difficulty communicating",
+                "difficulty finding words",
+                "difficulty with visual abilities",
+                "difficulty with spatial abilities",
+                "difficulty reasoning",
+                "difficulty problem-solving",
+                "difficulty with complex tasks",
+                "difficulty planning",
+                "difficulty organizing",
+                "difficulty with coordination",
+                "difficulty with motor functions"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of dementia. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":16
+        },
+        {
+            "tag":"mental illness",
+            "patterns":[
+                "sadness",
+                "feeling down",
+                "emptiness",
+                "hopelessness",
+                "confusion",
+                "reduced ability to concentrate",
+                "excessive fears",
+                "execessive worries",
+                "extreme guilt",
+                "extreme mood changes",
+                "loss of interest",
+                "loss of pleasure",
+                "withdrawal from friends",
+                "withdrawal from activities",
+                "significant tiredness",
+                "low energy",
+                "problems sleeping",
+                "sleep disturbances",
+                "insomnia",
+                "sleeping too much",
+                "restlessness",
+                "lack of energy",
+                "reduced appetite",
+                "weight loss",
+                "increased cravings",
+                "weight gain",
+                "anxiety",
+                "feeling worthless",
+                "self-blame",
+                "delusions",
+                "paranoia",
+                "hallucinations",
+                "inability to cope with problems",
+                "inability to cope with stress",
+                "trouble relating to situations",
+                "trouble relating to people",
+                "alcohol use",
+                "drug use",
+                "major changes in eating habits",
+                "sex drive changes",
+                "excessive anger",
+                "angry outbursts",
+                "agitation",
+                "irritability",
+                "hostility",
+                "violence",
+                "thoughts of death",
+                "suicide attempts",
+                "suicidal thinking"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of a mental illness. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":17
+        },
+        {
+            "tag":"stroke",
+            "patterns":[
+                "trouble speaking",
+                "trouble understanding others",
+                "confusion",
+                "slurring words",
+                "difficulty understanding speech",
+                "paralysis of face",
+                "paralysis one side of body",
+                "numbness of face",
+                "numbness of arm",
+                "numbeness of leg",
+                "sudden numbness",
+                "sudden weakness",
+                "sudden paralysis",
+                "one side of body",
+                "one side of face",
+                "vision problems",
+                "blurred vision",
+                "blackened vision",
+                "double vision",
+                "headache",
+                "sudden severe headache",
+                "vomiting",
+                "dizziness",
+                "altered consciousness",
+                "trouble walking",
+                "stumbling",
+                "loss of balance",
+                "sudden dizziness",
+                "loss of coordination",
+                "vertigo",
+                "reduced touch sensation",
+                "difficulty swallowing",
+                "rapid involuntary eye movement"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of a stroke. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":18
+        },
+        {
+            "tag":"acid reflux",
+            "patterns":[
+                "burning sensation after eating",
+                "burning sensation worsens when lying down",
+                "belching",
+                "heartburn", 
+                "nausea",
+                "regurgitation",
+                "bitter taste",
+                "abdomen discomfort",
+                "trouble swallowing",
+                "sensation of lump in throat",
+                "dry cough",
+                "inflammation of vocal cords",
+                "satiety early",
+                "chest pain",
+                "chest tightness",
+                "general discomfort"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of acid reflux. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":19
+        },
+        {
+            "tag":"dehydration",
+            "patterns":[
+                "extreme thirst",
+                "less urination",
+                "dark-colored urine",
+                "fatigue",
+                "dizziness",
+                "confusion",
+                "fever",
+                "diarrhea",
+                "vomiting",
+                "hypotension",
+                "nausea",
+                "lightheadedness",
+                "black stool",
+                "bloody stool",
+                "mental status changes",
+                "anorexia",
+                "irritable",
+                "disoriented",
+                "lethargy",
+                "dizziness",
+                "blackout"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of dehydration. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":20
+        },
+        {
+            "tag":"breast cancer",
+            "patterns":[
+                "breast lump",
+                "breast thickening",
+                "breast change in size", 
+                "breast change in shape",
+                "breast change in appearance",
+                "dimpling of breast",
+                "newly inverted nipple",
+                "peeling nipple",
+                "scaling nipple",
+                "crusting nipple",
+                "flaking nipple",
+                "redness breast skin",
+                "pitting breast skin",
+                "nipple discharge",
+                "swollen lymph nodes"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of breast cancer. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":21
+        },
+        {
+            "tag":"low blood sugar",
+            "patterns":[
+                "looking pale",
+                "shakiness",
+                "sweating",
+                "headache",
+                "excess sweating",
+                "excessive hunger",
+                "nausea",
+                "irregular heartbeat",
+                "fast heartbeat",
+                "fatigue",
+                "irritability",
+                "anxiety",
+                "difficulty concentrating",
+                "dizziness",
+                "lightheadedness",
+                "tingling lips",
+                "tingling tounge",
+                "tingling cheek",
+                "numbness of lips",
+                "numbness of tongue",
+                "numbness of cheek",
+                "sensation of pins and needles",
+                "confusion",
+                "unusual behavior",
+                "loss of coordination",
+                "slurred speech",
+                "blurry vision",
+                "tunnel vision",
+                "nightmares",
+                "unresponsiveness",
+                "tremor",
+                "unsteadiness"
+            ],
+            "responses":[
+             "It looks like you have some of the symptoms of low blood sugar. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":22
+        },
+        {
+            "tag":"glaucoma",
+            "patterns":[
+                "vision loss",
+                "blurred vision",
+                "distorted vision",
+                "eye pain with nausea"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of glaucoma. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":23
+        },
+        {
+            "tag":"sprain",
+            "patterns":[
+                "injury",
+                "pain",
+                "swelling",
+                "bruising",
+                "limited ability to move the affected joint",
+                "hearing a pop in joint",
+                "feeling a pop in joint",
+                "reduced range of motion",
+                "tenderness",
+                "can't move affected joint",
+                "can't bear weight on affected joint",
+                "numbness in injured area"
+            ],
+            "responses":[
+                "It looks like you have some symptoms of a sprain. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":24
+        },
+        {
+            "tag":"bone fracture",
+            "patterns":[
+                "injury",
+                "pain",
+                "loss of functionality",
+                "bleeding",
+                "bruising",
+                "limping",
+                "loss of height",
+                "physical deformity", 
+                "swelling",
+                "tenderness"
+            ],
+            "responses":[
+                "It looks like you have some symptoms of a bone fracture. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":25
+        },
+        {
+            "tag":"stomach virus",
+            "patterns":[
+                "watery diarrhea",
+                "nausea",
+                "vomiting",
+                "stomach cramps",
+                "stomach pain",
+                "muscle aches",
+                "fatigue",
+                "low-grade fever",
+                "indigestion",
+                "flatulence",
+                "loss of appetite",
+                "weakness",
+                "weight loss",
+                "abdominal pain"
+            ],
+            "responses":[
+                "It looks like you have the symptoms of a stomach virus. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":26
+        },
+        {
+            "tag":"sexually transmitted disease",
+            "patterns":[
+                "painful urination",
+                "lower abdominal pain",
+                "vaginal discharge",
+                "discharge from the penis",
+                "pain during sexual intercourse",
+                "bleeding between periods",
+                "testicular pain",
+                "thick cloudy bloody discharge fromp penis",
+                "thick cloudy bloody discharge from vagina",
+                "burning sensation when urinating",
+                "heavy menstrual bleeding",
+                "bleeding between periods",
+                "painful trsticles",
+                "swollen testicles",
+                "anal itching",
+                "clear, white, greenish yellowish vaginal discharge",
+                "strong vaginal odor",
+                "vaginal itching",
+                "vaginal irritation",
+                "itching inside penis",
+                "irritation inside penis",
+                "small red bumps around genitals",
+                "blisters around genitals",
+                "open sores around genitals",
+                "pain arond genitals",
+                "itching around the genitals",
+                "small flesh-colored swellings around genitals",
+                "several warts with cauliflower shape around genitals",
+                "bleeding with intercourse",
+                "red or reddish-brown penny-sized sores"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of sexually transmitted disease. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":27
+        },
+        {
+            "tag":"constipation",
+            "patterns":[
+                "infrequent stools",
+                "lumpy stools",
+                "hard stools",
+                "dry stool",
+                "painful bowel movements",
+                "straining during bowel movements",
+                "feeling blockage in your rectum",
+                "feeling can't empty stool",
+                "needing help to empty rectum",
+                "stomach ache",
+                "stomach cramps",
+                "bloated",
+                "nausea",
+                "rectum pain",
+                "pain sitting",
+                "anal discomfort"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of constipation. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":28
+        },
+        {
+            "tag":"yeast infection",
+            "patterns":[
+                "vaginal discharge",
+                "vaginal pain",
+                "vaginal itching",
+                "vaginal irritation",
+                "vaginal inflammation",
+                "vaginal rash",
+                "vaginal soreness",
+                "vulval inflammation",
+                "pain during sexual intercourse",
+                "burning sensation urinating",
+                "redness of vulva",
+                "thick white odor-free vaginal discharge",
+                "watery vaginal discharge"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of a yeast infection. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":29
+        },
+        {
+            "tag":"sleep disorder",
+            "patterns":[
+                "insomnia",
+                "difficulty falling asleep",
+                "difficulty staying asleep",
+                "sleep apnea",
+                "abnormal patterns in breathing while asleep",
+                "restless legs syndrome",
+                "uncomfortable sensation and urge to move legs while trying to fall asleep",
+                "narcolepsy", 
+                "extreme sleepiness during the day",
+                "falling asleep suddenly during the day",
+                "sleepwalking"
+            ],
+            "responses":[
+                "It looks like you have some of the symptoms of a sleep disorder. Let me gather some of your personal information so I can connect you with a doctor."
+            ],
+            "label":30
+        },
+        {
+            "tag":"default",
+            "patterns": ["xyz"],
+            "responses":[
+                "I'm sorry, I need a little more information. What kind of symptoms are you having?",
+                "I apologize, I'm having trouble understanding. Can you describe your symptoms?",
+                "I hope you don't mind, but I am not quite sure how to interpret that. Can you tell me your symptoms?"
+            ],
+            "label":31
+        }
+    ]
+ }
