@@ -3,11 +3,9 @@
 #
 # VirtualMed_GUI.py
 #
-# This application opens a camera attached to a computer.
-# Each frame from the video capture is evaluated for recognizable objects.
-# If an object is recognized, a shape is added around the object.
-# A label naming the type of object is added at the bottom of the shape. 
-# The application can be closed by either closing the video capture window or by pressing 'Q'
+# This application opens a message/response GUI.
+# You can type a question in the message window and 
+# get a response for your health-related concerns.
 ###################################################################################################
 
 
