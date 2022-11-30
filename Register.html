@@ -1,0 +1,191 @@
+<!--Santosh Yadav---!>
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="sitemap_link" content="" />
+
+    <!-- Title
+	================================================== -->
+    <title>Register - Virtual Med</title>
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="icon" href="assets/images/favicon-16x16.png" />
+
+    <!-- Font
+    ================================================== -->
+    <link href="assets/font/stylesheet.css" rel="stylesheet" />
+
+    <!-- CSS Files
+	================================================== -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper vm__user__register">
+      <div class="vm__container">
+        <div class="section_title">
+          <p class="nav-between">
+            <a href="#" class="back-btn" title="back"
+              ><img src="assets/images/arrow-left.svg" alt=""
+            /></a>
+          </p>
+          <h1 class="text-center">USER SIGNUP</h1>
+        </div>
+        <br />
+        <form action="register.php" method="post">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="vm_reg_username">
+                  <img src="assets/images/users.svg" alt="" />
+                  Username
+                </label>
+                <input
+                  type="text"
+                  name="username"
+                  id="vm_reg_username"
+                  class="form-control"
+                  placeholder="Username"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="vm_reg_password">
+                  <img src="assets/images/unlocked.svg" alt="" />
+                  Password
+                </label>
+                <input
+                  type="password"
+                  name="password"
+                  id="vm_reg_password"
+                  class="form-control"
+                  placeholder="Password"
+                  autocomplete="off"
+                  required
+                />
+                <span
+                  data-toggle="#vm_reg_password"
+                  class="field-icon toggle-password"
+                >
+                  <img src="assets/images/hide.svg" alt="" />
+                </span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="vm_reg_f_name">
+                  <img src="assets/images/user.svg" alt="" />
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  name="firstname"
+                  id="vm_reg_f_name"
+                  class="form-control"
+                  placeholder="First Name"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="vm_reg_l_name">
+                  <img src="assets/images/user.svg" alt="" />
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  name="lastname"
+                  id="vm_reg_l_name"
+                  class="form-control"
+                  placeholder="Last Name"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="vm_reg_phone">
+                  <img src="assets/images/telephone.svg" alt="" />
+                  Contact
+                </label>
+                <input
+                  type="text"
+                  name="phone_number"
+                  id="vm_reg_phone"
+                  class="form-control"
+                  placeholder="Contact"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="vm_reg_email">
+                  <img src="assets/images/envelope.svg" alt="" />
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="vm_reg_email"
+                  class="form-control"
+                  placeholder="Email Address"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label for="vm_reg_avatar">
+                  <img src="assets/images/image.svg" alt="" />
+                  Profile Picture
+                </label>
+                <input
+                  type="file"
+                  name="profile_picture"
+                  id="vm_reg_avatar"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="form-group">
+            <button type="submit">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+      $(".toggle-password").click(function () {
+        var input = $($(this).attr("data-toggle"));
+        if (input.attr("type") == "password") {
+          input.attr("type", "text");
+        } else {
+          input.attr("type", "password");
+        }
+      });
+    </script>
+  </body>
+</html>
