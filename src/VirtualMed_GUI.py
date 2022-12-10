@@ -1,8 +1,10 @@
 ###################################################################################################
-# James Hamilton
+# Author: James Hamilton
+# All code contained in this module written by James Hamilton
 #
-# VirtualMed_GUI.py
+# Module: VirtualMed_GUI.py
 #
+# Description:
 # This application opens a message/response GUI.
 # You can type a question in the message window and 
 # get a response for your health-related concerns.
@@ -52,8 +54,7 @@ def send():
 # Get response to the user message
 ################################################################################
 def get_response(message):
-    predictions = predict_class(message, model)
-    print(predictions)
+    predictions = predict_tag(message, model)
     response = evaluate_predictions(predictions, intents)
     
     return response
@@ -63,13 +64,13 @@ def get_response(message):
 ################################################################################
 # Predict the type of message
 ################################################################################
-def predict_class(message, model):
+def predict_tag(message, model):
     error_threshold = 0.25
 
     bag = bag_of_words(message, words)
     predictions = model.predict(np.array([bag]))[0]
 
-    # filter out predictions below a threshold
+    # filter out predictions below the threshold
     results = [[i,pred] for i, pred in enumerate(predictions) if pred > error_threshold]
 
     # sort by strength of probability
@@ -100,7 +101,7 @@ def bag_of_words(message, words):
                 # assign 1 if current word is in the vocabulary position
                 bag[i] = 1
 
-    return(np.array(bag))
+    return (np.array(bag))
 
 
 
@@ -171,7 +172,6 @@ def display_gui():
 
 
 
-
 ####################################################################################################
 # Entry point
 ####################################################################################################
@@ -183,9 +183,8 @@ if __name__ == "__main__":
     tags = pickle.load(open('tags_virtualmed.pkl','rb'))
     lemmatizer = WordNetLemmatizer()
     user = 'user'
-    welcome = "Welcome! You can have a conversation with me about any health-related concerns because I am avaialbe anytime. Let's get started..."
+    welcome = "Welcome! You can have a conversation with me about any health-related concerns because I am available anytime. Let's get started..."
     ignore_words = ["'s", ",", ".", "?"]
-    max_length = 16
     
 
     virtual_med, chat_log, scrollbar, text_box, send_button = build_gui()
