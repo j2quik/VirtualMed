@@ -1,11 +1,13 @@
 ###################################################################################################
-# James Hamilton
+# Author: James Hamilton
+# All code contained in this module written by James Hamilton
 #
-# VirtualMed_TRAIN.py
+# Module: VirtualMed_TRAIN.py
 #
-# This application opens a message/response GUI.
-# You can type a question in the message window and 
-# get a response for your health-related concerns.
+# Description:
+# This application trains a deep neural network on the pattern/response data set.
+# The weights from the epoch with the lowest validation loss are saved for the model.
+# The trained model will be used with the VirtualMed chat bot GUI.
 ###################################################################################################
 
 
@@ -54,7 +56,8 @@ def get_data():
             patterns_with_tags.append((word, intent['tag']))
             count = count +1
     
-    print('count:', count)
+    print(count, "patterns")
+    
     return patterns_with_tags, words, tags
 
 
@@ -63,85 +66,46 @@ def get_data():
 # Save the list of words and tags to pickle and text files for use with GUI
 ####################################################################################################
 def save_data():
-    pickle.dump(words,open('words_virtualmed.pkl','wb'))
-    with open("words_virtualmed.txt", "w") as output:
+    pickle.dump(words,open("{}.pkl".format(words_file),'wb'))
+    with open("{}.txt".format(words_file), "w") as output:
         output.write(str(words))
     output.close()
 
-    pickle.dump(tags,open('tags_virtualmed.pkl','wb'))
-    with open("tags_virtualmed.txt", "w") as output:
+    pickle.dump(tags,open("{}.pkl".format(tags_file),'wb'))
+    with open("{}.txt".format(tags_file), "w") as output:
         output.write(str(tags))
     output.close()
 
 
 
 ####################################################################################################
-# Define function to handle tokenization
+# Buikd the training set with patterns => features and tags => labels
 ####################################################################################################
 def get_training_set():
     training_set = list()
     
     empty_arr = [0] * len(tags)  # create an empty array for our output
 
-    # training set, bag of words for each sentence
+    # build the training set
     for pattern_with_tag in patterns_with_tags:
         bag = list()
         pattern = pattern_with_tag[0]  # list of tokenized words for the pattern
-        # lemmatize each word - create base word, in attempt to represent related words
+        # lemmatize each word: create base word, in an attempt to represent related words
         pattern = [lemmatizer.lemmatize(word.lower()) for word in pattern]
         
-        # create our bag of words array with 1, if word match found in current pattern
+        # fill the bag array with 1 if a word match is found in current pattern
         for word in words:
             bag.append(1) if word in pattern else bag.append(0)
 
-        output_row = list(empty_arr)  # output is a '0' for each tag and '1' for current tag (for each pattern)
-        output_row[tags.index(pattern_with_tag[1])] = 1
+        tag_outputs = list(empty_arr)
+        tag_outputs[tags.index(pattern_with_tag[1])] = 1
         
-        training_set.append([bag, output_row])
+        training_set.append([bag, tag_outputs])
         
     random.shuffle(training_set)
     training_set = np.array(training_set)
     training_patterns = list(training_set[:,0])
     training_tags = list(training_set[:,1])
-
-
-    return training_patterns, training_tags
-
-
-
-    # create our training data
-    #training_set = list()
-    training_patterns = list()
-    training_tags = list()
-    # create an empty array for our output
-    empty_arr = [0] * len(tags)
-
-    # training set, bag of words for each sentence
-    for pattern_with_tag in patterns_with_tags:
-        #bag = list()
-        training_pattern = list()
-        training_tag = list()
-        # list of tokenized words for the pattern
-        pattern = pattern_with_tag[0]
-        # lemmatize each word - create base word, in attempt to represent related words
-        pattern = [lemmatizer.lemmatize(word.lower()) for word in pattern]
-        # create our bag of words array with 1, if word match found in current pattern
-        for word in words:
-            #bag.append(1) if word in pattern else bag.append(0)
-            training_pattern.append(1) if word in pattern else training_pattern.append(0)
-        # output is a '0' for each tag and '1' for current tag (for each pattern)
-        #output_row = list(output_empty)
-        training_tag = list(empty_arr)
-        training_tag[tags.index(pattern_with_tag[1])] = 1
-        
-        #training_set.append([bag, output_row])
-        training_patterns.append(training_pattern)
-        training_tags.append(training_tag)
-
-    #random.shuffle(training_set)
-    #training_set = np.array(training_set)
-    #training_patterns = list(training_set[:,0])
-    #training_tags = list(training_set[:,1])
 
 
     return training_patterns, training_tags
@@ -194,16 +158,18 @@ if __name__=='__main__':
     learning_rate = 0.0001
     epsilon = 0.001
 
-    #data_file_name = 'intents_virtualmed.json'
-    filepath = 'train_weights/best_weights_{}.h5'.format(id)  # name of file to save best weights during training
-    model_name = 'models/virtualmed_model_{}.h5'.format(id)   # name of model saved after training
+    data_file_name = 'intents_virtualmed.json'
+    words_file = 'words_virtualmed.pkl'
+    tags_file = 'tags_virtualmed.pkl'
+    filepath = 'best_weights_{}.h5'.format(id)  # name of file to save best weights during training
+    model_name = 'virtualmed_model_{}.h5'.format(id)   # name of model saved after training
     lemmatizer = WordNetLemmatizer()
     optimizer = Adam(learning_rate=learning_rate, epsilon=epsilon)
     loss = CategoricalCrossentropy()
     acc = CategoricalAccuracy('accuracy')
     ignore_words = ["'s", ",", ".", "?"]
     
-    data_file = open('intents_virtualmed.json').read()
+    data_file = open(data_file_name).read()
     intents = json.loads(data_file)
 
     patterns_with_tags, words, tags = get_data()
@@ -220,7 +186,6 @@ if __name__=='__main__':
 
     print (len(tags), "tags")
     print (len(words), "lemmatized words")
-    print(len(training_patterns[0]), "training patterns")
     print("\nTraining data created")
 
     model = build_model()
@@ -247,3 +212,5 @@ if __name__=='__main__':
     plot_results('Accuracy', num_epochs, train_acc, val_acc, id)
 
     print("\nmodel created")
+
+####################################################################################################
